@@ -1,6 +1,5 @@
 import {useLocalStorage} from 'usehooks-ts';
 
-import {v4 as uuidv4} from 'uuid';
 import {ColumnType} from '../utils/enums';
 import {TaskModel} from '../utils/models';
 
@@ -11,7 +10,7 @@ function useTaskCollection() {
     }>('tasks', {
         Todo: [
             {
-                id: uuidv4(),
+                id: Date.now().toString(),
                 column: ColumnType.TO_DO,
                 title: 'Task 1',
                 color: 'blue.300',
@@ -19,7 +18,7 @@ function useTaskCollection() {
         ],
         'In Progress': [
             {
-                id: uuidv4(),
+                id: Date.now().toString(),
                 column: ColumnType.IN_PROGRESS,
                 title: 'Task 2',
                 color: 'yellow.300',
@@ -27,7 +26,7 @@ function useTaskCollection() {
         ],
         Blocked: [
             {
-                id: uuidv4(),
+                id: Date.now().toString(),
                 column: ColumnType.BLOCKED,
                 title: 'Task 3',
                 color: 'red.300',
@@ -35,7 +34,7 @@ function useTaskCollection() {
         ],
         Completed: [
             {
-                id: uuidv4(),
+                id: Date.now().toString(),
                 column: ColumnType.COMPLETED,
                 title: 'Task 4',
                 color: 'green.300',

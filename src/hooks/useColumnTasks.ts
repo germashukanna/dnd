@@ -1,5 +1,4 @@
 import {useCallback} from 'react';
-import {v4 as uuidv4} from 'uuid';
 import {ColumnType} from '../utils/enums';
 import {TaskModel} from '../utils/models';
 import useTaskCollection from './useTaskCollection';
@@ -23,7 +22,7 @@ function useColumnTasks(column: ColumnType) {
             }
 
             const newColumnTask: TaskModel = {
-                id: uuidv4(),
+                id: Date.now().toString(),
                 title: `New ${column} task`,
                 color: pickChakraRandomColor('.300'),
                 column,
